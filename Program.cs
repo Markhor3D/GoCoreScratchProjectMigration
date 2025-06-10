@@ -12,7 +12,7 @@ namespace GoCoreScratchProjectMigration
         {
             if (args == null)
                 args = new string[0];
-            args = new string[] { @"C:\Users\umar.hassan\Downloads\Grade 2 Session 8_ Motors in Action.sb3" };
+            //args = new string[] { @"C:\Users\umar.hassan\Downloads\Grade 2 Session 8_ Motors in Action.sb3" };
             var keys = new Dictionary<string, string>();
             foreach (var line in File.ReadAllLines("keys.txt"))
             {
