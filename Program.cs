@@ -11,7 +11,16 @@ namespace GoCoreScratchProjectMigration
         static void Main(string[] args)
         {
             if (args == null)
+            {
                 args = new string[0];
+                Console.WriteLine("No file provided. Kindly drop a file on me");                
+                args = Console.ReadLine()?.Trim('"', '\\', '/').Split(' ') ?? new string[0];
+                if (args.Length == 0 || args[0].Length == 0)
+                {
+                    Console.WriteLine("No file provided. Exiting.");
+                    return;
+                }
+            }
             //args = new string[] { @"C:\Users\umar.hassan\Downloads\Grade 2 Session 8_ Motors in Action.sb3" };
             var keys = new Dictionary<string, string>();
             foreach (var line in File.ReadAllLines("keys.txt"))
@@ -95,6 +104,8 @@ namespace GoCoreScratchProjectMigration
 
                 Console.ForegroundColor = ConsoleColor.White;
             }
+            Console.WriteLine("Done. Press any key to exit.");
+            Console.ReadKey();
         }
     }
 }
